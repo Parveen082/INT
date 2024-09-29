@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: #f0f0f0; /* Light gray background for better contrast */
+    color: #333; /* Dark text color for readability */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.community {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #1e90ff; /* Blue color for the community text */
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-icon {
+    background-image: url('int-x.jpg'); /* Add the image */
+    background-size: cover;  /* Make the image cover the entire div */
+    background-position: center;  /* Center the image */
+    border-radius: 50%;
+    width: 80px; /* Slightly larger user icon */
+    height: 80px; /* Slightly larger user icon */
+    margin: 0 auto;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #1e90ff; /* Blue border for the user icon */
+}
+
+.user-name, .user-points {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.game-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.game-card {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Card shadow for depth */
+    border-radius: 10px; /* Rounded corners for the game card */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.farming-section {
+    margin-bottom: 30px;
+}
+
+.farming-btn {
+    background-color: #1e90ff; /* Blue button */
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.farming-btn:hover {
+    background-color: #1c7cb0; /* Darker blue on hover */
+}
+
+.timer {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #555; /* Gray color for the timer */
+}
+
+footer.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #222;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.footer-btn:hover {
+    color: #1e90ff; /* Hover color change */
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.footer-btn img {
+    width: 24px; /* Icon size */
+    height: 24px; /* Icon size */
+    margin-bottom: 5px; /* Space between icon and label */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .farming-btn {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .user-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .user-name, .user-points {
+        font-size: 16px;
+    }
+
+    .timer {
+        font-size: 20px;
+    }
+
+    .footer-btn {
+        font-size: 14px;
+    }
+}

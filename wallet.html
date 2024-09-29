@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff8a00, #e52e71);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Container for the animation and text */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            padding: 20px;
+        }
+
+        /* Animation styling */
+        .ani {
+            width: 100%;
+            max-width: 500px; /* Maximum width of the animation */
+            padding: 20px;
+        }
+
+        dotlottie-player {
+            width: 100%; /* Make the animation responsive */
+            height: auto; /* Auto adjust the height based on the width */
+        }
+
+        /* Heading styling */
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 20px 0;
+        }
+
+        /* Message styling */
+        .message {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        /* Back Button Styling */
+        .back-btn {
+            background-color: #ffffff; /* White background for contrast */
+            color: #ff8a00; /* Match the gradient color */
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer;
+            margin-top: 20px; /* Space above the button */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+        .back-btn:hover {
+            background-color: #ff8a00; /* Change to match the theme */
+            color: #fff; /* Change text color to white */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            .message {
+                font-size: 18px;
+            }
+            .ani {
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+            .message {
+                font-size: 16px;
+            }
+            .ani {
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ani">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+            <dotlottie-player 
+                src="https://lottie.host/17d2ccb1-54bf-4f40-ae75-63a849add667/ktJ1EhMJVk.json"
+                background="transparent" 
+                speed="1" 
+                loop 
+                autoplay>
+            </dotlottie-player>
+        </div>
+        <h1>Under Construction</h1>
+        <p class="message">We are working hard to bring you something awesome!</p>
+        <p class="message">Check back soon for updates.</p>
+        <!-- Back Button -->
+        <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+</body>
+
+</html>
