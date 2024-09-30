@@ -1,33 +1,35 @@
-let farmingBtn = document.getElementById('farming-btn');
-let timerDisplay = document.getElementById('timer');
-let farmingActive = false;
-let farmingTime = 6 * 60 * 60; // 6 hours 46 minutes in seconds
+let farmingActive = false; // Initialize the farming state
+let farmingTimer; // Declare the timer variable
 
-// Function to start farming
 function startFarming() {
-  if (farmingActive) return;
-  
-  farmingActive = true;
-  farmingBtn.disabled = true;
-  let startTime = Date.now();
-  
-  let interval = setInterval(() => {
-    let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
-    let remainingTime = farmingTime - elapsedTime;
+    if (!farmingActive) {
+        farmingActive = true; // Set to true when farming starts
 
-    if (remainingTime <= 0) {
-      clearInterval(interval);
-      farmingBtn.disabled = false;
-      farmingActive = false;
-      timerDisplay.textContent = "0h 0m 0s";
-      return;
+        // Show the game section and start the animation
+        document.getElementById('game-section').style.display = 'block';
+        const farmingAnimation = document.getElementById('farming-animation');
+        farmingAnimation.play(); // Start the animation
+
+        let totalTime = 12 * 60 * 60; // 12 hours in seconds
+
+        // Update the timer every second instead of every minute to ensure accurate updates
+        farmingTimer = setInterval(() => {
+            totalTime -= 1; // Reduce by 1 second every second
+
+            if (totalTime <= 0) {
+                clearInterval(farmingTimer); // Stop the timer when it reaches 0
+                document.getElementById('timer').innerText = 'Time\'s up!';
+                farmingAnimation.stop(); // Stop the animation
+                farmingActive = false; // Reset farming state
+                return;
+            }
+
+            const hours = Math.floor(totalTime / 3600); // Get hours
+            const minutes = Math.floor((totalTime % 3600) / 60); // Get minutes
+            const seconds = totalTime % 60; // Get seconds
+
+            // Update the timer display in hours, minutes, and seconds
+            document.getElementById('timer').innerText = `${hours}h ${minutes}m ${seconds}s`;
+        }, 1000); // Update every second
     }
-
-    let hours = Math.floor(remainingTime / 3600);
-    let minutes = Math.floor((remainingTime % 3600) / 60);
-    let seconds = remainingTime % 60;
-
-    // Display the time in the format of hh:mm:ss
-    timerDisplay.textContent = `${hours}h ${minutes}m ${seconds}s`;
-  }, 1000);
 }
