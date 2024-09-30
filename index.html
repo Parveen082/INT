@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farming Page</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="community">
-        <span style="padding: 10px; margin-top: 10px;">INT-X</span>
+        <span>INT-X</span>
     </div>
+
     <div class="container">
         <div class="profile">
             <div class="user-info">
@@ -20,23 +22,22 @@
         </div>
 
         <!-- Game Section -->
-        <div class="game-section">
+        <div class="game-section" id="game-section">
             <div class="game-card">
-                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-                    type="module"></script>
-
-                <dotlottie-player src="https://lottie.host/dbe45ecb-001e-4975-a12a-7f4394d73db2/K0wkAUK6uy.json"
-                    background="transparent" speed="1" style="width: 100%; max-width: 300px; height: 300px;" loop
-                    autoplay></dotlottie-player>
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+                <dotlottie-player id="farming-animation" src="https://lottie.host/9074a817-3f74-4f6c-ab66-f474eb65457e/NLj3KLMN4D.lottie" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay="false">
+                </dotlottie-player>
             </div>
         </div>
 
         <!-- Farming Section -->
         <div class="farming-section">
             <button id="farming-btn" class="farming-btn" onclick="startFarming()">Farming ⚡</button>
-            <div id="timer" class="timer">0h 0m</div>
+            <div id="timer" class="timer">0m</div>
+
         </div>
     </div>
+
     <!-- Footer Section -->
     <footer class="footer">
         <button class="footer-btn" id="home" onclick="window.location.href='home.html'">
@@ -52,7 +53,6 @@
             <img src="credit-wallet.png" alt="Wallet Icon">
         </button>
     </footer>
-
     <script src="script.js"></script>
 </body>
 
